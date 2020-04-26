@@ -15,9 +15,10 @@
 <script>
 //test motion
 //https://codepen.io/frank890417/pen/LYpxyZK?editors=0010
+import axios from "axios"
 export default {
   props: [
-    "value", "hidecode", "enableMotion", "scriptFiles"
+    "value", "hidecode", "enableMotion", "scriptFiles","defaultSrc"
   ],
   data(){
     return {
@@ -107,26 +108,34 @@ export default {
         _this.restartCode()
       },0)
     })
+    if (this.defaultSrc){
+      axios.get(this.defaultSrc).then(res=>{
+        this.value=res.data
+      })
+    }
   }
 }
 </script>
-<style lang="sass">
-.codeArea
-  iframe
-    overflow: hidden
-    border: none
-    width: 100%
-  .CodeMirror 
-    border: 1px solid #eee
-    height: auto
+<style lang="css" scoped>
+iframe {
+	overflow: hidden;
+	border: none;
+	width: 100%;
+}
 
-  .btn.btn-rerun
-    font-size: 12px
-  button.requestMotion
-    position: absolute
-    left: 50%
-    top: 30%
+.CodeMirror {
+	border: 1px solid #eee;
+	height: auto;
+}
 
-    z-index: 50
+.btn.btn-rerun {
+	font-size: 12px;
+}
 
+.requestMotion {
+	position: absolute;
+	left: 50%;
+	top: 30%;
+	z-index: 50;
+}
 </style>
