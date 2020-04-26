@@ -1,9 +1,10 @@
 import VueCodemirror from 'vue-codemirror'
 import 'codemirror/mode/javascript/javascript.js'
 import 'codemirror/lib/codemirror.css'
+import pvm from './p5-vue-mirror'
+
 export default {
   install(Vue, options) {
-    
     Vue.use(VueCodemirror, { 
       options: {
         // theme: 'tomorrow-night-bright', 
@@ -14,8 +15,6 @@ export default {
       },
       events: ['scroll']
     } )
-
-    import pvm from './p5-vue-mirror'
     Vue.component("p5-vue-mirror",pvm)
   }
  };

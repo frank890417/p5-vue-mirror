@@ -93,17 +93,13 @@ export default {
     }
   },
   mounted(){
-    if (this.enableMotion){
-      
-    }
-
     let _this = this
     var timer
     window.addEventListener('resize',()=>{
       clearTimeout(timer)
       timer = setTimeout(()=>{
         _this.restartCode()
-      },500)
+      },0)
     })
   }
 }
@@ -113,7 +109,6 @@ export default {
   iframe
     overflow: hidden
     border: none
-
     width: 100%
   .CodeMirror 
     border: 1px solid #eee
