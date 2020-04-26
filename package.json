@@ -1,0 +1,24 @@
+{
+  "name": "p5-vue-mirror",
+  "version": "1.0.0",
+  "description": "p5.js code mirror with live edit/ run using vue.js v-model",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frank890417/p5-vue-mirror.git"
+  },
+  "keywords": [
+    "p5js",
+    "vue",
+    "codemirror"
+  ],
+  "author": "Che-Yu Wu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/frank890417/p5-vue-mirror/issues"
+  },
+  "homepage": "https://github.com/frank890417/p5-vue-mirror#readme"
+}
