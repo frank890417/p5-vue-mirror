@@ -6,7 +6,8 @@
       :srcdoc="`<html><head></head>${enableMotion?motionButtonStyle:''}<body>${enableMotion?motionButtonCode:''}${scriptHtml}<script>${embedCodes}; function windowResized() {resizeCanvas(windowWidth, windowHeight);}</script><style>html,body{margin: 0;overflow: hidden;}</style></body>`")
     div( v-if="!hidecode")
       button.btn.btn-light.btn-rerun(@click="restartCode")
-        i.fas.fa-redo-alt
+        i.fas.fa-redo-alt 
+        span ReRun
       codemirror(v-model="value", :hidecode="true")
     
 
@@ -102,12 +103,12 @@ export default {
   mounted(){
     let _this = this
     var timer
-    window.addEventListener('resize',()=>{
-      clearTimeout(timer)
-      timer = setTimeout(()=>{
-        _this.restartCode()
-      },0)
-    })
+    // window.addEventListener('resize',()=>{
+    //   clearTimeout(timer)
+    //   timer = setTimeout(()=>{
+    //     _this.restartCode()
+    //   },0)
+    // })
     if (this.defaultSrc){
       axios.get(this.defaultSrc).then(res=>{
         this.value=res.data
