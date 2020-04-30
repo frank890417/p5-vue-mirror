@@ -68,5 +68,6 @@ export default {
 * "defaultSrc": String of ajax script files, served as the default code
 
 ## Example With hidecode=false
+[Example: p5 Tutorial Site](https://idmcreativecoding.monoame.com/section/3)
 ![](https://github.com/frank890417/p5-vue-mirror/blob/master/截圖%202020-04-30%20上午1.19.48.png)
 
