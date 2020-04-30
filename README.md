@@ -15,7 +15,7 @@ Vue.use(pvm)
 ```
 
 ## 3. Use the compontent within pages with v-model
-```
+```vue
 <template>
   <p5-vue-mirror v-model="p5codes" />
 </template>
@@ -41,7 +41,7 @@ export default {
 ```
 
 ## 4. Use the compontent within pages with script files
-```
+```vue
 <template>
   <p5-vue-mirror :scriptFiles="scriptFiles" />
 </template>
