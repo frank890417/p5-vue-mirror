@@ -1,6 +1,6 @@
 {
   "name": "p5-vue-mirror",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "p5.js code mirror with live edit/ run using vue.js v-model",
   "main": "index.js",
   "scripts": {
