@@ -25,8 +25,8 @@ export default {
     return {
       key: 0,
       libs: [
-        "https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/addons/p5.sound.min.js",
-        "https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/p5.js"
+        "https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/addons/p5.sound.min.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js"
 
       ],
       motionButtonStyle: `
