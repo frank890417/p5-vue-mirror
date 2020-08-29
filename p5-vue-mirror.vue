@@ -3,7 +3,7 @@
     iframe(
       :key="key"
       height="400px"
-      :srcdoc="`<html><head></head>${enableMotion?motionButtonStyle:''}<body>${enableMotion?motionButtonCode:''}${scriptHtml}<script>${embedCodes}; function windowResized() {resizeCanvas(windowWidth, windowHeight);}</script><style>html,body{margin: 0;overflow: hidden;}</style></body>`")
+      :srcdoc="`<html><head>${headerContent}</head>${enableMotion?motionButtonStyle:''}<body>${enableMotion?motionButtonCode:''}${scriptHtml}<script>${embedCodes}; </script><style>html,body{margin: 0;overflow: hidden;}</style></body>`")
     div( v-if="!hidecode")
       button.btn.btn-light.btn-rerun(@click="restartCode")
         i.fas.fa-redo-alt 
@@ -19,7 +19,7 @@
 import axios from "axios"
 export default {
   props: [
-    "value", "hidecode", "enableMotion", "scriptFiles","defaultSrc"
+    "value", "hidecode", "enableMotion", "scriptFiles","defaultSrc","headerContent"
   ],
   data(){
     return {
@@ -27,7 +27,6 @@ export default {
       libs: [
         "https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js",
         "https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/addons/p5.sound.min.js"
-
       ],
       motionButtonStyle: `
         <style>button.motionTrigger{position: absolute;width:100%;height: 100%;opacity: 0;border-radius: 0;-webkit-appearance: none;outline: none !important;}</style>
@@ -94,7 +93,7 @@ export default {
   },
   computed:{
     embedCodes(){
-      return `${this.value};${this.enableMotion?this.motionEventCode:''}`
+      return `${this.value};${this.enableMotion?this.motionEventCode:''};if (typeof windowResized=="undefined"){window.windowResized = function() {resizeCanvas(windowWidth, windowHeight);}}`
     },
     scriptHtml(){
       return  this.libs.concat(this.scriptFiles || []).map(file=> (`<script src='${file}'><\/script>` ) ).join("")
