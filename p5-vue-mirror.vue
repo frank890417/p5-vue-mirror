@@ -2,7 +2,6 @@
   div.codeArea
     iframe(
       :key="key"
-      height="400px"
       :srcdoc="`<html><head>${headerContent}</head>${enableMotion?motionButtonStyle:''}<body>${enableMotion?motionButtonCode:''}${scriptHtml}<script>${embedCodes}; </script><style>html,body{margin: 0;overflow: hidden;}</style></body>`")
     div( v-if="!hidecode")
       button.btn.btn-light.btn-rerun(@click="restartCode")
@@ -121,6 +120,7 @@ iframe {
 	overflow: hidden;
 	border: none;
 	width: 100%;
+  min-height: 400px;
 }
 
 .CodeMirror {
